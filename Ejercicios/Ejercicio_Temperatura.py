@@ -1,3 +1,8 @@
+#-solicitar la temperatura de 5 dias consecutivos
+#-mostrar la temperatura promedio, maxima y minima de la semana
+#-contar con cuantos dias tuvieron temperatura alta (mayor de 25 grados)
+#-mostrar un resumen completo de los datos registrados
+
 def pedir_temperaturas():
     """Solicita las temperaturas de 5 días y devuelve una lista."""
     temperaturas = []
