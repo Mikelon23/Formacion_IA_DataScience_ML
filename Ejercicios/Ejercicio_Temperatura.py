@@ -7,11 +7,10 @@ def pedir_temperaturas():
     return temperaturas
 
 def calcular_estadisticas(temperaturas):
-    """Calcula promedio, máxima, mínima y cantidad de días > 25°C."""
+    """Calcula promedio, máxima y mínima."""
     suma = 0
     maxima = temperaturas[0]
     minima = temperaturas[0]
-    dias_calidos = 0
 
     for t in temperaturas:
         suma += t
@@ -19,13 +18,11 @@ def calcular_estadisticas(temperaturas):
             maxima = t
         if t < minima:
             minima = t
-        if t > 25:
-            dias_calidos += 1
 
     promedio = suma / len(temperaturas)
-    return promedio, maxima, minima, dias_calidos
+    return promedio, maxima, minima
 
-def mostrar_resumen(temperaturas, promedio, maxima, minima, dias_calidos):
+def mostrar_resumen(temperaturas, promedio, maxima, minima):
     """Muestra el resumen completo de las temperaturas."""
     print("\n=== Resumen de la semana ===")
     for i in range(len(temperaturas)):
@@ -34,12 +31,11 @@ def mostrar_resumen(temperaturas, promedio, maxima, minima, dias_calidos):
     print(f"\nTemperatura promedio: {promedio:.2f}°C")
     print(f"Temperatura máxima: {maxima}°C")
     print(f"Temperatura mínima: {minima}°C")
-    print(f"Días con temperatura alta (>25°C): {dias_calidos}")
 
 def main():
     temperaturas = pedir_temperaturas()
-    promedio, maxima, minima, dias_calidos = calcular_estadisticas(temperaturas)
-    mostrar_resumen(temperaturas, promedio, maxima, minima, dias_calidos)
+    promedio, maxima, minima = calcular_estadisticas(temperaturas)
+    mostrar_resumen(temperaturas, promedio, maxima, minima)
 
 # Ejecutar
 if __name__ == "__main__":
