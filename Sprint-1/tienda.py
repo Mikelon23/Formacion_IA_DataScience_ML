@@ -1,5 +1,11 @@
-import pandas as pd
-import numpy as np
+def calcular_estadisticas():
+    import numpy as np
+    # use np here    # ...existing code...
+    import pandas as pd
+    # import numpy as np  # removed: unused
+    from datetime import datetime
+    import os
+    # ...existing code... numpy as np
 from datetime import datetime
 import os
 
